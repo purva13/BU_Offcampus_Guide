@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     end
     
     def new_user
-        redirect_to login_path
+        redirect_to signup_path
+    end
+    
+    def login
+       redirect_to login_path 
     end
 end
