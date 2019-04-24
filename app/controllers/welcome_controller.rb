@@ -1,4 +1,8 @@
 class WelcomeController < ApplicationController
-    def index
-    end
+  skip_before_filter :can_proceed
+  
+  def login
+    @action = 'login'
+  end
 end
+

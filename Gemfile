@@ -22,6 +22,11 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'loofah', '>=2.2.3'
+
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'omniauth-facebook'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -35,8 +40,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', '~> 1.3.13'
+  gem 'sqlite3', '1.3.13'
+  gem 'rspec-rails', '~> 3.8'
+  gem 'capybara', '2.4.4'
+  gem 'factory_bot_rails'
+  gem 'launchy'
+  gem 'railroady'
+  gem 'ZenTest', '4.11.0'
+  gem 'jasmine-rails'
 end
 
 group :development do
@@ -47,8 +58,16 @@ group :development do
   gem 'spring'
 end
 
-group :production do
-  gem 'pg', '~> 0.21'
-  gem 'rails_12factor'
+group :test do
+  gem 'guard-rspec'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner', '1.4.1'
+  gem 'simplecov', :require => false
+  gem 'metric_fu'
 end
 
+group :production do
+  gem 'pg', '~>0.21'
+  gem 'rails_12factor'
+end
