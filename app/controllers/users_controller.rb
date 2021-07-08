@@ -5,5 +5,14 @@ class UsersController < ApplicationController
         @users = User.all
     end
     def guest
+        
+    end
+    
+    def new_user
+        redirect_to signup_path
+    end
+    
+    def login
+       redirect_to login_path 
     end
 end
